@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input id="generated-value"class="form-control" type="text" readonly>
+                    <button id="generator-btn"class="generate-btn">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-section half-width">
+                    <input class="form-control" id="user-input"type="text">
+                    <div class="numbers">
+                        <div class="calc-body">
+                            <div class="calc-button-row">
+                              <div class="button" id="7">7</div>
+                              <div class="button" id="8">8</div>
+                              <div class="button"id="9">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div class="button"id="4">4</div>
+                              <div class="button" id="5">5</div>
+                              <div class="button" id="6">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div class="button"id="1">1</div>
+                              <div class="button" id="2">2</div>
+                              <div class="button"id="3">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button"id="backspace"><</div>
+                                <div class="button"id="0">0</div>
+                                <div class="button"id="clear">C</div>
+                            </div>
+                            <div>
+                                <button id="submit"type="submit" class="submit-btn">Submit</button>
+                                <p class="action-left">3 try left</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notify-section">
+            <p id="notify-invalid">❌ Pin Didn't Match, Please try again</p>
+            <p id="notify-success">✅ Pin Matched... Secret door is opening for you</p>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById('generator-btn').addEventListener('click', function(){
+            const randomNumber = Math.round(1000+ Math.random() * 9000);
+            document.getElementById('generated-value').value = randomNumber;
+
+        })
+    </script>
+</body>
+</html>
