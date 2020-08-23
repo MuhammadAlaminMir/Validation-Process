@@ -43,7 +43,7 @@
                             </div>
                             <div>
                                 <button id="submit"type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <p class="action-left" id="try-count">3 try left</p>
                             </div>
                     </div>
                 </div>
@@ -55,12 +55,9 @@
         </div>
 
     </div>
-    <script>
-        document.getElementById('generator-btn').addEventListener('click', function(){
-            const randomNumber = Math.round(1000+ Math.random() * 9000);
-            document.getElementById('generated-value').value = randomNumber;
+    <script src="./script.js">
 
-        })
+        
     </script>
 </body>
 </html>
